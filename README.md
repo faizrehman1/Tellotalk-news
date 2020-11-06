@@ -17,7 +17,16 @@ implementation(name: 'Your AAR file name', ext: 'aar')
 
 ## Usage
 
-Extend your application class with *TelloApplication* class in TelloSDK. Initialize **TelloTalkSdk** client before using any of its features
+Extend your application class with *TelloApplication* class in TelloSDK.
+
+```java
+public class YourApplicationClass extends TelloApplication {
+
+}
+```
+
+
+Initialize **TelloTalkSdk** client before using any of its features
 
 ```java
 public TelloApiClient telloApiClient;
