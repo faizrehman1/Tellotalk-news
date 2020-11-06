@@ -20,6 +20,8 @@ implementation(name: 'Your AAR file name', ext: 'aar')
 Extend your application class with *TelloApplication* class in TelloSDK. Initialize **TelloTalkSdk** client before using any of its features
 
 ```java
+public TelloApiClient telloApiClient;
+
 TelloApiClient.Builder builder = new TelloApiClient.Builder()
                 .accessKey("accessKey")
                 .projectToken("projectToken")
