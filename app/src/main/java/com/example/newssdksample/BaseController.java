@@ -6,6 +6,7 @@ import android.content.Context;
 import com.tilismtech.tellotalk_news.TelloApplication;
 import com.tilismtech.tellotalk_news.manager.TelloApiClient;
 
+
 public class BaseController extends TelloApplication {
 
     private TelloApiClient telloApiClient;
@@ -16,9 +17,9 @@ public class BaseController extends TelloApplication {
         super.onCreate();
         instance = this;
         TelloApiClient.Builder builder = new TelloApiClient.Builder()
-                .accessKey("")
-                .projectToken("")
-                .notificationIcon(R.drawable.notification_bell);
+                .accessKey("A954439C518E4F8F8B7DD7E1C46B98")
+                .projectToken("4F69F6060A3142789E505D28E61C4D")
+                .notificationIcon(R.drawable.notification);
         telloApiClient = builder.build();
     }
 

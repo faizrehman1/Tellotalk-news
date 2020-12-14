@@ -19,6 +19,10 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+        debug{
+            buildConfigField "String", 'PINNING_KEY', "\"AIzaSyCFZyYkPsEaKxDtHsG5Kl8_OF6YSgamfcg\""
+            buildConfigField "String", 'APP_JID', "\"@im.tellotalk.com\""
+        }
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -59,7 +63,14 @@ dependencies {
         exclude group: 'com.facebook.fresco', module: 'imagepipeline-native'
     }
     implementation 'androidx.browser:browser:1.2.0'
-    implementation(name: 'tellotalk-news', ext: 'aar')
+   implementation(name: 'tellotalk-news', ext: 'aar')
+    implementation 'com.google.firebase:firebase-messaging:17.3.4'
 
+//    implementation ('com.tilismtech.tellotalk_news:tellotalk-news:0.0.4'){
+//        transitive = true
+//    }
+
+  //  implementation 'com.tilismtech.tellotalksdk:tellotalksdk:2.1.9'
 
 }
+apply plugin: 'com.google.gms.google-services'

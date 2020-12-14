@@ -1,0 +1,122 @@
+{
+  "project_info": {
+    "project_number": "257750864504",
+    "firebase_url": "https://tellocast-sdk-sample.firebaseio.com",
+    "project_id": "tellocast-sdk-sample",
+    "storage_bucket": "tellocast-sdk-sample.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:257750864504:android:fc510c135c8ea5f4d3938d",
+        "android_client_info": {
+          "package_name": "com.bykea.tellotalksdk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "257750864504-vqjj4ilrrh4q19o1rq5c3soicpqnpigo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bykea.tellotalksdk",
+            "certificate_hash": "b10ae7cdcdc4023efc92982878ed31c81c19eaa2"
+          }
+        },
+        {
+          "client_id": "257750864504-9agstqfg7of6np9gk2jg5amrjk4d4joq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJczserOGOtqbiNF5xp7kmOrV79SZwAnE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "257750864504-9agstqfg7of6np9gk2jg5amrjk4d4joq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:257750864504:android:dfb0652d1df2b73dd3938d",
+        "android_client_info": {
+          "package_name": "com.example.newssdksample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "257750864504-fc2v6l34brckhgopeupklcfp183s0qqa.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.newssdksample",
+            "certificate_hash": "b10ae7cdcdc4023efc92982878ed31c81c19eaa2"
+          }
+        },
+        {
+          "client_id": "257750864504-9agstqfg7of6np9gk2jg5amrjk4d4joq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJczserOGOtqbiNF5xp7kmOrV79SZwAnE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "257750864504-9agstqfg7of6np9gk2jg5amrjk4d4joq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:257750864504:android:dd8de18894ca3984d3938d",
+        "android_client_info": {
+          "package_name": "com.example.tellotalk_news_sdk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "257750864504-k4mkfstkrvv9vrd3kg3c74gihpre5l22.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tellotalk_news_sdk",
+            "certificate_hash": "b10ae7cdcdc4023efc92982878ed31c81c19eaa2"
+          }
+        },
+        {
+          "client_id": "257750864504-9agstqfg7of6np9gk2jg5amrjk4d4joq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJczserOGOtqbiNF5xp7kmOrV79SZwAnE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "257750864504-9agstqfg7of6np9gk2jg5amrjk4d4joq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
