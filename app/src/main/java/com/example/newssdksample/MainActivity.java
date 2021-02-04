@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.tilismtech.tellotalk_news.entities.NotificationNewsObj;
 import com.tilismtech.tellotalk_news.listener.OnSuccessListener;
 
 import org.json.JSONObject;
@@ -23,10 +24,26 @@ public class MainActivity extends AppCompatActivity {
             try {
                 // Receive Payload from FCM notification
                 // This method redirect you the news category and sub-category
-                BaseController.getInstance().getTelloApiClient().setNotificationState(new JSONObject(getIntent().getStringExtra("sdk_payload")));
+                JSONObject js = new JSONObject(getIntent().getStringExtra("sdk_payload"));
+//                MyApplication.getInstance().getTelloApiClient().setNotificationState(new NotificationNewsObj(
+//                        js.getJSONObject("sdkNotification").optString("category_id"),
+//                        js.getJSONObject("sdkNotification").optString("sub_category_id"),
+//                        js.optString("profileId")));
+
+                BaseController.getInstance().getTelloApiClient().showNewsItem(MainActivity.this,new NotificationNewsObj(
+                        js.getJSONObject("sdkNotification").optString("category_id"),
+                        js.getJSONObject("sdkNotification").optString("sub_category_id"),
+                        js.optString("profileId"),
+                        js.getJSONObject("sdkNotification").optString("news_id"),
+                        js.getJSONObject("sdkNotification").optString("news_title"),
+                        js.getJSONObject("sdkNotification").optString("news_url")));
+             //   BaseController.getInstance().getTelloApiClient().setNotificationState(new JSONObject(getIntent().getStringExtra("sdk_payload")));
+
+
             }catch (Exception e){
                 e.printStackTrace();
             }
+
         }
 
         btn_register = (Button)findViewById(R.id.btn_register);

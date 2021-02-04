@@ -19,6 +19,7 @@ public class BaseController extends TelloApplication {
         TelloApiClient.Builder builder = new TelloApiClient.Builder()
                 .accessKey("A954439C518E4F8F8B7DD7E1C46B98")
                 .projectToken("4F69F6060A3142789E505D28E61C4D")
+                .setContext(getApplicationContext())
                 .notificationIcon(R.drawable.notification);
         telloApiClient = builder.build();
     }

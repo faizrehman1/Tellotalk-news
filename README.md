@@ -9,31 +9,31 @@ You must have **AccessKey** and **ProjectToken** to use this SDK in your applica
 
 ## Installation
 
-Add SDK AAR in your app lib folder as following:
+Add SDK dependency in your app build.gradle as following:
 
 ```java
-implementation(name: 'Your AAR file name', ext: 'aar')
+implementation 'com.tilismtech.tellotalksdk:tellotalksdk:0.1.5@aar'
 ```
-
-## Usage
-
-Extend your application class with *TelloApplication* class in TelloSDK.
-
+in Project build.gradle
 ```java
-public class YourApplicationClass extends TelloApplication {
 
+repositories {
+    google()
+jcenter()
+maven { url "https://dl.bintray.com/faizrehman1/TelloCast-News" }
 }
 ```
 
 
-Initialize **TelloTalkSdk** client before using any of its features
+## Usage
+
+Extend your application class with *TelloApplication* class in TelloSDK. Initialize **TelloTalkSdk** client before using any of its features
 
 ```java
-public TelloApiClient telloApiClient;
-
 TelloApiClient.Builder builder = new TelloApiClient.Builder()
                 .accessKey("accessKey")
                 .projectToken("projectToken")
+                .setContext(getApplicationContext())
               .notificationIcon("Drawable Resource for notification Small Icon");
         telloApiClient = builder.build();
 ```
@@ -44,7 +44,34 @@ Register user to Sdk using following method :
 ```java
  telloApiClient.registerUser(Context context,String profileId, OnSuccessListener<Boolean> listener)
 ```
-This method will return true/false if user is register or not. After that on every app restart you need to call login to be able to access sdk  using following method:
+This method will return true/false if user is register or not. After that on every app restart you need to call login to be able to access sdk.
+
+## Send User to Specific Channel from Notication
+```java
+  MyApplication.getInstance().getTelloApiClient().setNotificationState(new NotificationNewsObj(String category_id, String sub_category_id, String profileID);
+```
+
+## Send User to Specific News Item from Notication
+```java
+MyApplication.getInstance().getTelloApiClient().showNewsItem(new NotificationNewsObj(String category_id, String sub_category_id, String profileID, String news_Id, String news_title, String news_url);
+```
+
+## Payload Example:
+```java
+String s="{\n" +
+                " \"profileId\": \"test_android\",\n" +
+                " \"sdkNotification\": {\n" +
+                "   \"news_id\": 31330,\n" +
+                "   \"news_title\": \"Blast in Afghanistan kills Mangal Bagh\",\n" +
+                "   \"news_description\": \"KHYBER: Chief of one of Khyber district’s most dreaded and banned organisations, Lashkar-i-Islam (LI), Mangal Bagh was killed in a mine explosion in Nangarhar province of Afghanistan on Thursday\",\n" +
+                "   \"news_url\": \"www.google.com\",\n" +
+                "   \"category_id\": \"dawn\",\n" +
+                "   \"sub_category_id\": \"Pakistan\"\n" +
+                " }\n" +
+                "}";
+```
+
+
 
 ## Dependencies
 ```java
