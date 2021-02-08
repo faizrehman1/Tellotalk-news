@@ -2,7 +2,7 @@
 
 # TelloTalk News Sdk 
 
-TelloTalkSdk is a solution for integrating chat messaging in your app.
+TelloTalk News SDK is a solution from integrating news in your app.
 
 ## Prerequisites
 You must have **AccessKey** and **ProjectToken** to use this SDK in your application.
@@ -12,7 +12,7 @@ You must have **AccessKey** and **ProjectToken** to use this SDK in your applica
 Add SDK dependency in your app build.gradle as following:
 
 ```java
-implementation 'com.tilismtech.tellotalksdk:tellotalksdk:0.1.5@aar'
+implementation 'com.tilismtech.tellotalksdk:tellotalksdk:0.1.6@aar'
 ```
 in Project build.gradle
 ```java
@@ -47,11 +47,20 @@ Register user to Sdk using following method :
 This method will return true/false if user is register or not. After that on every app restart you need to call login to be able to access sdk.
 
 ## Send User to Specific Channel from Notication
+If you want to go to a particular news' category, SDK needs to know user's profile id, category id and sub category id. You can provide these values in NotificationNewsObj class. By calling following method you can view news category.
+
 ```java
-  MyApplication.getInstance().getTelloApiClient().setNotificationState(new NotificationNewsObj(String category_id, String sub_category_id, String profileID);
+  MyApplication.getInstance().getTelloApiClient().routeToCategory(new NotificationNewsObj(String category_id, String sub_category_id, String profileID);
+```
+
+## Send User to Specific Channel from Notication (Through Json Model)
+```java
+  MyApplication.getInstance().getTelloApiClient().setNotificationState(new JSONObject()));
 ```
 
 ## Send User to Specific News Item from Notication
+If you want to directly view a particular news you must call below method by providing required parameters. This method requires a presenting view controller and NotificationNewsObj in which you must provide profile Id, category Id, sub category Id, news Id, news title and news URL.
+
 ```java
 MyApplication.getInstance().getTelloApiClient().showNewsItem(new NotificationNewsObj(String category_id, String sub_category_id, String profileID, String news_Id, String news_title, String news_url);
 ```
@@ -94,5 +103,44 @@ String s="{\n" +
         exclude group: 'com.facebook.fresco', module: 'imagepipeline-native'
     }
     implementation 'androidx.browser:browser:1.2.0'
+}
+```
+## Set App Theme
+You can change app theme for dark and light modes by using following methods
+```java
+boolean mode ; 
+// mode = true; for dark theme
+//  mode = false; for light theme
+MyApplication.getInstance().getTelloApiClient().setUserInterface(mode); // For Dark Mode
+```
+
+## Set Color Code
+You can set navigation bar tint color, background color of news channel background view, news channel and category selection color, and selected and unselected news channel and category text color.
+```java
+<color name="colorlight">#ffffff</color> // List Background Color for Light theme
+    <color name="colordark">#141414</color> // List Background Color for Dark theme
+    <color name="darkcard">#303030</color> // Card Color for Dark theme
+    <color name="whitecard">#ffffff</color> // Card Color for Light theme
+    <color name="darktext">#ffffff</color> // Card text color for dark theme
+    <color name="lighttext">#303030</color> // Card text color for Light theme
+
+
+    //Dark Mode
+    <color name="dark_toolbar">#006064</color> // Dark Mode Toolbar Background Color
+    <color name="dark_category_background">#0097A7</color>  // Dark Mode Category Background Color
+    <color name="dark_subcategory_background">#26C6DA</color>  // Dark Mode Subcategory Background Color
+    <color name="dark_category_selection">#E0F7FA</color> // Dark Mode Subcategory Indicator Color
+    <color name="dark_subcategory_selection">#114A51</color> // Dark Mode Category Indicator Color
+    <color name="dark_selected_tab_text">#000000</color> // Dark Mode Selected Tab Text Color
+    <color name="dark_unselected_tab_text">#afafaf</color> // Dark Mode Un Selected Tab Text Color
+
+    //Light Mode
+    <color name="light_toolbar">#004D40</color> // Light Mode Toolbar Background Color
+    <color name="light_category_background">#00796B</color> // Light Mode Category Background Color
+    <color name="light_subcategory_background">#26A69A</color>  // Light Mode Subcategory Background Color
+    <color name="light_category_selection">#B2DFDB</color> // Light Mode Subcategory Indicator Color
+    <color name="light_subcategory_selection">#75132A</color> // Light Mode Category Indicator Color
+    <color name="light_selected_tab_text">#000000</color> // Light Mode Selected Tab Text Color
+    <color name="light_unselected_tab_text">#afafaf</color> // Light Mode Un Selected Tab Text Colors
 }
 ```
