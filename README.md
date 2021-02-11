@@ -62,24 +62,8 @@ If you want to go to a particular news' category, SDK needs to know user's profi
 If you want to directly view a particular news you must call below method by providing required parameters. This method requires a presenting view controller and NotificationNewsObj in which you must provide profile Id, category Id, sub category Id, news Id, news title and news URL.
 
 ```java
-MyApplication.getInstance().getTelloApiClient().showNewsItem(new NotificationNewsObj(String category_id, String sub_category_id, String profileID, String news_Id, String news_title, String news_url);
+MyApplication.getInstance().getTelloApiClient().showNewsItem(new NotificationNewsObj(String category_id, String sub_category_id, String profileID, String news_Id, String news_title, String news_url,String channelName);
 ```
-
-## Payload Example:
-```java
-String s="{\n" +
-                " \"profileId\": \"test_android\",\n" +
-                " \"sdkNotification\": {\n" +
-                "   \"news_id\": 31330,\n" +
-                "   \"news_title\": \"Blast in Afghanistan kills Mangal Bagh\",\n" +
-                "   \"news_description\": \"KHYBER: Chief of one of Khyber district’s most dreaded and banned organisations, Lashkar-i-Islam (LI), Mangal Bagh was killed in a mine explosion in Nangarhar province of Afghanistan on Thursday\",\n" +
-                "   \"news_url\": \"www.google.com\",\n" +
-                "   \"category_id\": \"dawn\",\n" +
-                "   \"sub_category_id\": \"Pakistan\"\n" +
-                " }\n" +
-                "}";
-```
-
 
 
 ## Dependencies
@@ -111,36 +95,72 @@ You can change app theme for dark and light modes by using following methods
 boolean mode ; 
 // mode = true; for dark theme
 //  mode = false; for light theme
-MyApplication.getInstance().getTelloApiClient().setUserInterface(mode); // For Dark Mode
+```
+
+**Enums for different themes**
+Using Enums to differentiate.
+-PRESTIGE
+-ISLAMIC
+-CONVENTIONAL
+
+```java
+MyApplication.getInstance().getTelloApiClient().setUserInterface(mode,TelloApiClient.ThemeType.ISLAMIC.name()); // For Dark Mode
 ```
 
 ## Set Color Code
 You can set navigation bar tint color, background color of news channel background view, news channel and category selection color, and selected and unselected news channel and category text color.
 ```java
-<color name="colorlight">#ffffff</color> // List Background Color for Light theme
-    <color name="colordark">#141414</color> // List Background Color for Dark theme
-    <color name="darkcard">#303030</color> // Card Color for Dark theme
-    <color name="whitecard">#ffffff</color> // Card Color for Light theme
-    <color name="darktext">#ffffff</color> // Card text color for dark theme
-    <color name="lighttext">#303030</color> // Card text color for Light theme
+//Dark Mode
+    <color name="navigationBarTint_dark">#006064</color> // Dark Mode Toolbar Background Color
+    <color name="newsChannelBGColor_dark">#0097A7</color>  // Dark Mode Channel Background Color
+    <color name="newsCategoryBGColor_dark">#26C6DA</color>  // Dark Mode Category Background Color
+    <color name="channelSelectionColor_dark">#E0F7FA</color> // Dark Mode Channel Indicator Color
+    <color name="categorySelectionColor_dark">#114A51</color> // Dark Mode Category Indicator Color
+    <color name="selectedTextColor_dark">#FFFFFF</color> // Dark Mode Selected Tab Text Color
+    <color name="unSelectedTextColor_dark">#afafaf</color> // Dark Mode Un Selected Tab Text Color
+    // News Item Dark
+    <color name="newsViewBGColor_dark">#141414</color> // List Background Color for Dark theme
+    <color name="newsCardTextColor_dark">#ffffff</color> // Card text color for dark theme
+    <color name="newsCardViewBGColor_dark">#303030</color> // Card Color for Dark theme
 
-
-    //Dark Mode
-    <color name="dark_toolbar">#006064</color> // Dark Mode Toolbar Background Color
-    <color name="dark_category_background">#0097A7</color>  // Dark Mode Category Background Color
-    <color name="dark_subcategory_background">#26C6DA</color>  // Dark Mode Subcategory Background Color
-    <color name="dark_category_selection">#E0F7FA</color> // Dark Mode Subcategory Indicator Color
-    <color name="dark_subcategory_selection">#114A51</color> // Dark Mode Category Indicator Color
-    <color name="dark_selected_tab_text">#000000</color> // Dark Mode Selected Tab Text Color
-    <color name="dark_unselected_tab_text">#afafaf</color> // Dark Mode Un Selected Tab Text Color
 
     //Light Mode
-    <color name="light_toolbar">#004D40</color> // Light Mode Toolbar Background Color
-    <color name="light_category_background">#00796B</color> // Light Mode Category Background Color
-    <color name="light_subcategory_background">#26A69A</color>  // Light Mode Subcategory Background Color
-    <color name="light_category_selection">#B2DFDB</color> // Light Mode Subcategory Indicator Color
-    <color name="light_subcategory_selection">#75132A</color> // Light Mode Category Indicator Color
-    <color name="light_selected_tab_text">#000000</color> // Light Mode Selected Tab Text Color
-    <color name="light_unselected_tab_text">#afafaf</color> // Light Mode Un Selected Tab Text Colors
+    <color name="navigationBarTint_light">#004D40</color> // Light Mode Toolbar Background Color
+    <color name="newsChannelBGColor_light">#00796B</color> // Light Mode Channel Background Color
+    <color name="newsCategoryBGColor_light">#26A69A</color>  // Light Mode Category Background Color
+    <color name="channelSelectionColor_light">#B2DFDB</color> // Light Mode Channel Indicator Color
+    <color name="categorySelectionColor_light">#75132A</color> // Light Mode Category Indicator Color
+    <color name="selectedTextColor_light">#000000</color> // Light Mode Selected Tab Text Color
+    <color name="unSelectedTextColor_light">#afafaf</color> // Light Mode Un Selected Tab Text Color
+    // News Item Light
+    <color name="newsViewBGColor_light">#ffffff</color> // List Background Color for Light theme
+    <color name="newsCardTextColor_light">#000000</color> // Card text color for Light theme
+    <color name="newsCardViewBGColor_light">#FFFFFF</color>  // Card Color for Light theme
+
+    //Light Mode Prestige
+    <color name="navigationBarTint_light_prestige">#75032A</color> // Light Mode Prestige Toolbar Background Color
+    <color name="newsChannelBGColor_light_prestige">#E45F8C</color> // Light Mode Prestige Channel Background Color
+    <color name="newsCategoryBGColor_light_prestige">#E3B2C3</color>  // Light Mode Prestige Category Background Color
+    <color name="channelSelectionColor_light_prestige">#400016</color> // Light Mode Prestige Channel Indicator Color
+    <color name="categorySelectionColor_light_prestige">#250E13</color> // Light Mode Prestige Category Indicator Color
+    <color name="selectedTextColor_light_prestige">#000000</color> // Light Mode Prestige Selected Tab Text Color
+    <color name="unSelectedTextColor_light_prestige">#afafaf</color> // Light Mode Prestige Un Selected Tab Text Color
+    // News Item Light
+    <color name="newsViewBGColor_light_prestige">#ffffff</color> // List Background Color for Light theme Prestige
+    <color name="newsCardTextColor_light_prestige">#000000</color> // Card text color for Light theme Prestige
+    <color name="newsCardViewBGColor_light_prestige">#FFFFFF</color>  // Card Color for Light theme Prestige
+
+    //Light Mode Islamic
+    <color name="navigationBarTint_light_islamic">#2196F3</color> // Light Mode Islamic Toolbar Background Color
+    <color name="newsChannelBGColor_light_islamic">#6C80EC</color> // Light Mode Islamic Channel Background Color
+    <color name="newsCategoryBGColor_light_islamic">#041055</color>  // Light Mode Islamic Category Background Color
+    <color name="channelSelectionColor_light_islamic">#CFFAF6</color> // Light Mode Islamic Channel Indicator Color
+    <color name="categorySelectionColor_light_islamic">#555760</color> // Light Mode Islamic Category Indicator Color
+    <color name="selectedTextColor_light_islamic">#000000</color> // Light Mode Islamic Selected Tab Text Color
+    <color name="unSelectedTextColor_light_islamic">#afafaf</color> // Light Mode Islamic Un Selected Tab Text Color
+    // News Item Light
+    <color name="newsViewBGColor_light_islamic">#ffffff</color> // List Background Color for Light theme Islamic
+    <color name="newsCardTextColor_light_islamic">#000000</color> // Card text color for Light theme Islamic
+    <color name="newsCardViewBGColor_light_islamic">#FFFEFE</color>  // Card Color for Light theme Islamic
 }
 ```
