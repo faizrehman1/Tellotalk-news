@@ -52,14 +52,15 @@ public class MyFcmService extends FirebaseMessagingService {
         }
 
         String s="{\n" +
-                " \"profileId\": \"123\",\n" +
+                " \"profileId\": \"test_android\",\n" +
                 " \"sdkNotification\": {\n" +
-                "   \"news_id\": 3396,\n" +
-                "   \"news_title\": \"Abu Dhabi Emirate\",\n" +
-                "   \"news_description\": \"Abu Dhabi Emirate tech city\",\n" +
-                "   \"news_url\": \"www.google.com\",\n" +
-                "   \"category_id\": \"propakistani\",\n" +
-                "   \"sub_category_id\": \"Sports\"\n" +
+                "   \"news_id\": 32103,\n" +
+                "   \"news_title\": \"Blast in Afghanistan kills Mangal Bagh\",\n" +
+                "   \"news_description\": \"KHYBER: Chief of one of Khyber district’s most dreaded and banned organisations, Lashkar-i-Islam (LI), Mangal Bagh was killed in a mine explosion in Nangarhar province of Afghanistan on Thursday\",\n" +
+                "   \"news_url\": \"https://cnnurdu.com.pk\",\n" +
+                "   \"category_id\": \"dawn\",\n" +
+                "   \"sub_category_id\": \"Pakistan\",\n" +
+                "   \"channel_name\": \"Dawn\"\n" +
                 " }\n" +
                 "}";
 

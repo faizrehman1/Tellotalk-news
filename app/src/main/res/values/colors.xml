@@ -3,4 +3,59 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+
+
+
+    //Dark Mode
+    <color name="navigationBarTint_dark">#00CEBA</color> // Dark Mode Toolbar Background Color
+    <color name="newsChannelBGColor_dark">#128390</color>  // Dark Mode Channel Background Color
+    <color name="newsCategoryBGColor_dark">#484848</color>  // Dark Mode Category Background Color
+    <color name="channelSelectionColor_dark">#212121</color> // Dark Mode Channel Indicator Color
+    <color name="categorySelectionColor_dark">#73FDFF</color> // Dark Mode Category Indicator Color
+    <color name="selectedTextColor_dark">#FFFFFF</color> // Dark Mode Selected Tab Text Color
+    <color name="unSelectedTextColor_dark">#e0e0e0</color> // Dark Mode Un Selected Tab Text Color
+    // News Item Dark
+    <color name="newsCardTextColor_dark">#ffffff</color> // Card text color for dark theme
+    <color name="newsViewBGColor_dark">#000000</color> // List Background Color for Dark theme
+    <color name="newsCardViewBGColor_dark">#202020</color> // Card Color for Dark theme
+
+
+    //Light Mode
+    <color name="navigationBarTint_light">#00CEBA</color> // Light Mode Toolbar Background Color
+    <color name="newsChannelBGColor_light">#128390</color> // Light Mode Channel Background Color
+    <color name="newsCategoryBGColor_light">#D78390</color>  // Light Mode Category Background Color
+    <color name="channelSelectionColor_light">#212121</color> // Light Mode Channel Indicator Color
+    <color name="categorySelectionColor_light">#73FDFF</color> // Light Mode Category Indicator Color
+    <color name="selectedTextColor_light">#000000</color> // Light Mode Selected Tab Text Color
+    <color name="unSelectedTextColor_light">#212121</color> // Light Mode Un Selected Tab Text Color
+    // News Item Light
+    <color name="newsCardTextColor_light">#202020</color> // Card text color for Light theme
+    <color name="newsViewBGColor_light">#e0e0e0</color> // List Background Color for Light theme
+    <color name="newsCardViewBGColor_light">#ffffff</color>  // Card Color for Light theme
+
+    //Light Mode Prestige
+    <color name="navigationBarTint_light_prestige">#75032A</color> // Light Mode Prestige Toolbar Background Color
+    <color name="newsChannelBGColor_light_prestige">#E45F8C</color> // Light Mode Prestige Channel Background Color
+    <color name="newsCategoryBGColor_light_prestige">#E3B2C3</color>  // Light Mode Prestige Category Background Color
+    <color name="channelSelectionColor_light_prestige">#400016</color> // Light Mode Prestige Channel Indicator Color
+    <color name="categorySelectionColor_light_prestige">#250E13</color> // Light Mode Prestige Category Indicator Color
+    <color name="selectedTextColor_light_prestige">#000000</color> // Light Mode Prestige Selected Tab Text Color
+    <color name="unSelectedTextColor_light_prestige">#afafaf</color> // Light Mode Prestige Un Selected Tab Text Color
+    // News Item Light
+    <color name="newsCardTextColor_light_prestige">#000000</color> // Card text color for Light theme Prestige
+    <color name="newsViewBGColor_light_prestige">#ffffff</color> // List Background Color for Light theme Prestige
+    <color name="newsCardViewBGColor_light_prestige">#FFFFFF</color>  // Card Color for Light theme Prestige
+
+    //Light Mode Islamic
+    <color name="navigationBarTint_light_islamic">#2196F3</color> // Light Mode Islamic Toolbar Background Color
+    <color name="newsChannelBGColor_light_islamic">#6C80EC</color> // Light Mode Islamic Channel Background Color
+    <color name="newsCategoryBGColor_light_islamic">#041055</color>  // Light Mode Islamic Category Background Color
+    <color name="channelSelectionColor_light_islamic">#CFFAF6</color> // Light Mode Islamic Channel Indicator Color
+    <color name="categorySelectionColor_light_islamic">#555760</color> // Light Mode Islamic Category Indicator Color
+    <color name="selectedTextColor_light_islamic">#000000</color> // Light Mode Islamic Selected Tab Text Color
+    <color name="unSelectedTextColor_light_islamic">#afafaf</color> // Light Mode Islamic Un Selected Tab Text Color
+    // News Item Light
+    <color name="newsCardTextColor_light_islamic">#000000</color> // Card text color for Light theme Islamic
+    <color name="newsViewBGColor_light_islamic">#ffffff</color> // List Background Color for Light theme Islamic
+    <color name="newsCardViewBGColor_light_islamic">#FFFEFE</color>  // Card Color for Light theme Islamic
 </resources>
